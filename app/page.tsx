@@ -161,41 +161,28 @@ export default function Home() {
       {/* HEADER */}
       <header className="fixed top-0 w-full z-50 py-4 px-6 md:px-12 bg-background/60 backdrop-blur-md border-b border-foreground/5 transition-all duration-300">
         <div className="flex justify-between items-center relative">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="flex flex-col gap-1 z-10"
-          >
+          <div className="flex flex-col gap-1 z-10">
             <span className="font-serif italic text-xl md:text-2xl leading-none">Hombres Libres</span>
             <span className="text-[8px] md:text-[9px] uppercase tracking-[0.3em] opacity-50">Мастерская ароматов</span>
-          </motion.div>
+          </div>
           
-          <motion.nav 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.8 }}
-            className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-6 lg:gap-10 text-[9px] uppercase tracking-[0.2em] w-max z-10"
-          >
-            <a href="#vision" className="hover:text-foreground/50 transition-colors">О бренде</a>
-            <a href="#archives" className="hover:text-foreground/50 transition-colors">Витрина</a>
-            <a href="#intuition" className="hover:text-foreground/50 transition-colors">Интуиция</a>
-            <a href="#sensations" className="hover:text-foreground/50 transition-colors">Отзывы</a>
-            <a href="#faq" className="hover:text-foreground/50 transition-colors">FAQ</a>
-            <a href="#journal" className="hover:text-foreground/50 transition-colors">Журнал</a>
-          </motion.nav>
+          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-6 lg:gap-10 text-[9px] uppercase tracking-[0.2em] w-max z-10">
+            <a href="#vision" className="hover:text-accent transition-colors">О бренде</a>
+            <a href="#archives" className="hover:text-primary transition-colors">Витрина</a>
+            <a href="#intuition" className="hover:text-accent transition-colors">Интуиция</a>
+            <a href="#sensations" className="hover:text-primary transition-colors">Отзывы</a>
+            <a href="#faq" className="hover:text-accent transition-colors">FAQ</a>
+            <a href="#journal" className="hover:text-primary transition-colors">Журнал</a>
+          </nav>
 
           <div className="flex items-center gap-6 z-20">
             {/* Mobile Menu Toggle */}
-            <motion.button 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.5 }}
+            <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden flex items-center justify-center p-2 rounded-full border border-foreground/10 bg-foreground/10 text-foreground/70"
             >
               {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-            </motion.button>
+            </button>
           </div>
         </div>
       </header>
@@ -230,62 +217,36 @@ export default function Home() {
 
       {/* 1. CINEMATIC HERO (Standard Flow Without Sticking) */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden z-10">
-        <motion.div 
-          className="absolute inset-0 z-0"
-          style={{ scale: heroScale, opacity: heroOpacity, filter: heroBlur, y: heroTextY }}
-        >
+        <div className="absolute inset-0 z-0 opacity-40">
           <img 
             src="https://images.unsplash.com/photo-1605814050854-15f1c9fcbb0a?q=80&w=2000&auto=format&fit=crop" 
             alt="Hero Atmoshpere" 
-            className="w-full h-full object-cover object-bottom opacity-40 mix-blend-multiply"
+            className="w-full h-full object-cover object-bottom mix-blend-multiply"
           />
           <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background z-10"></div>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          style={{ y: heroTextY, opacity: heroOpacity }}
-          className="relative z-20 flex flex-col items-center w-full px-4"
-        >
+        <div className="relative z-20 flex flex-col items-center w-full px-4">
            <h1 className="text-[12vw] md:text-[8vw] font-serif leading-none text-center tracking-tighter mix-blend-difference relative py-8 z-30">
-            <motion.span 
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="block text-foreground uppercase px-4 pb-2"
-            >
+            <span className="block text-foreground uppercase px-4 pb-2">
               Свечи,
-            </motion.span>
-             <motion.span 
-               initial={{ opacity: 0, scale: 0.9 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 2, ease: "easeOut", delay: 0.8 }}
-               className="block italic font-light text-transparent bg-clip-text bg-linear-to-r from-primary to-foreground py-6 px-4 mt-2"
-            >
+            </span>
+             <span className="block italic font-light text-transparent bg-clip-text bg-linear-to-r from-primary to-accent py-6 px-4 mt-2">
               создающие атмосферу.
-            </motion.span>
+            </span>
            </h1>
 
            {/* Upper Corner Details (Filling Space) */}
-           <motion.div 
-             initial={{ opacity: 0, x: -30 }}
-             animate={{ opacity: 1, x: 0 }}
-             transition={{ duration: 1.5, delay: 1 }}
-             className="absolute top-32 left-8 md:top-40 md:left-24 hidden lg:flex flex-col gap-3 mix-blend-difference z-20 max-w-[200px]"
-           >
-             <div className="w-12 h-px bg-primary/50"></div>
-             <p className="text-[9px] uppercase tracking-widest text-primary">Ольфакторная <br/>Архитектура</p>
+           <div className="absolute top-32 left-8 md:top-40 md:left-24 hidden lg:flex flex-col gap-3 mix-blend-difference z-20 max-w-[200px]">
+             <div className="w-12 h-px bg-accent/50"></div>
+             <p className="text-[9px] uppercase tracking-widest text-accent">Ольфакторная <br/>Архитектура</p>
              <p className="text-[10px] text-foreground/40 font-light leading-relaxed mt-2 hidden xl:block">
                Создаем не просто запах, а форму и объем вашего пространства.
              </p>
-           </motion.div>
+           </div>
 
            {/* Circular SVG Seal / Stamp */}
-           <motion.div 
-             initial={{ opacity: 0, scale: 0.8 }}
-             animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 1.5, delay: 1 }}
-             className="absolute top-32 right-8 md:top-32 md:right-24 hidden lg:flex items-center justify-center mix-blend-difference z-20"
-           >
+           <div className="absolute top-32 right-8 md:top-32 md:right-24 hidden lg:flex items-center justify-center mix-blend-difference z-20">
              <motion.div
                animate={{ rotate: 360 }}
                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -300,16 +261,11 @@ export default function Home() {
                  </text>
                </svg>
                {/* Center Star */}
-               <Star className="w-4 h-4 text-primary" />
+               <Star className="w-4 h-4 text-accent" />
              </motion.div>
-           </motion.div>
+           </div>
 
-           <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 1.5, delay: 1.5 }}
-             className="mt-12 md:mt-20 flex flex-col items-center gap-8 relative z-30 mix-blend-difference"
-           >
+           <div className="mt-12 md:mt-20 flex flex-col items-center gap-8 relative z-30 mix-blend-difference">
              <p className="font-light text-sm md:text-base text-foreground/70 max-w-md text-center leading-relaxed tracking-wider px-6">
                <span className="text-primary font-serif italic text-xl">Hombres Libres</span><br/> 
                Не просто аромат, а архитектура вашего пространства. 100% соевый воск, деревянный фитиль и глубокие композиции.
@@ -320,8 +276,8 @@ export default function Home() {
              >
                 <span className="relative z-10 transition-colors duration-500 text-white font-bold">Смотреть каталог свечей</span>
              </a>
-           </motion.div>
-        </motion.div>
+           </div>
+        </div>
 
         {/* Scrolling Text Marquee Background */}
         <div className="absolute bottom-10 md:bottom-20 w-full overflow-hidden flex z-0 opacity-[0.03] md:opacity-10 pointer-events-none mix-blend-overlay">
@@ -372,23 +328,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-8 xl:gap-12 relative z-10 w-full mb-8">
             {/* Point 01 */}
             <div className="relative z-10 flex flex-col h-full">
-               {/* Fixed Giant Number Background */}
-               <motion.div 
-                 initial={{ opacity: 0 }}
-                 whileInView={{ opacity: 1 }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1 }}
-                 className="absolute -top-12 -left-6 lg:-top-16 lg:-left-6 text-[40vw] lg:text-[10rem] xl:text-[14rem] font-serif italic text-foreground/5 pointer-events-none select-none z-0 tracking-tighter leading-none"
-               >
+               <div className="absolute -top-12 -left-6 lg:-top-16 lg:-left-6 text-[40vw] lg:text-[10rem] xl:text-[14rem] font-serif italic text-foreground/5 pointer-events-none select-none z-0 tracking-tighter leading-none">
                  01
-               </motion.div>
-               <motion.div
-                 initial={{ height: 0 }}
-                 whileInView={{ height: "100%" }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
-                 className="absolute left-0 top-0 w-px bg-primary/30 z-10"
-               />
+               </div>
+               <div className="absolute left-0 top-0 w-px bg-primary/30 z-10 h-full" />
                <div className="pl-6 xl:pl-8 py-8 relative z-20 grow">
                  <h3 className="text-2xl lg:text-3xl font-serif leading-[1.2] mb-4">
                    Свет — это не про видимость. <br className="hidden xl:block"/>
@@ -399,13 +342,7 @@ export default function Home() {
                  </p>
                </div>
                
-               <motion.div 
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true, margin: "-10%" }}
-                 transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                 className="relative group mt-auto pl-6 xl:pl-8"
-               >
+               <div className="relative group mt-auto pl-6 xl:pl-8">
                  <div className="aspect-4/3 overflow-hidden relative w-full">
                    <img 
                      src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?q=80&w=800&auto=format&fit=crop" 
@@ -417,28 +354,15 @@ export default function Home() {
                  <div className="absolute -bottom-4 -left-2 bg-background p-3 border border-foreground/10 backdrop-blur-xl z-20">
                     <p className="font-serif italic text-base">Отлито вручную.</p>
                  </div>
-               </motion.div>
+               </div>
             </div>
 
             {/* Point 02 */}
             <div className="relative z-10 flex flex-col h-full">
-               {/* Fixed Giant Number Background */}
-               <motion.div 
-                 initial={{ opacity: 0 }}
-                 whileInView={{ opacity: 1 }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1 }}
-                 className="absolute -top-12 -left-6 lg:-top-16 lg:-left-6 text-[40vw] lg:text-[10rem] xl:text-[14rem] font-serif italic text-foreground/5 pointer-events-none select-none z-0 tracking-tighter leading-none"
-               >
+               <div className="absolute -top-12 -left-6 lg:-top-16 lg:-left-6 text-[40vw] lg:text-[10rem] xl:text-[14rem] font-serif italic text-foreground/5 pointer-events-none select-none z-0 tracking-tighter leading-none">
                  02
-               </motion.div>
-               <motion.div
-                 initial={{ height: 0 }}
-                 whileInView={{ height: "100%" }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
-                 className="absolute left-0 top-0 w-px bg-primary/30 z-10"
-               />
+               </div>
+               <div className="absolute left-0 top-0 w-px bg-primary/30 z-10 h-full" />
                <div className="pl-6 xl:pl-8 py-8 relative z-20 grow">
                  <h3 className="text-2xl lg:text-3xl font-serif leading-[1.2] mb-4">
                    Никаких компромиссов. <br className="hidden xl:block"/>
@@ -449,13 +373,7 @@ export default function Home() {
                  </p>
                </div>
 
-               <motion.div 
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true, margin: "-10%" }}
-                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                 className="relative group mt-auto pl-6 xl:pl-8"
-               >
+               <div className="relative group mt-auto pl-6 xl:pl-8">
                  <div className="aspect-4/3 overflow-hidden relative w-full">
                    <img 
                      src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?q=80&w=800&auto=format&fit=crop" 
@@ -467,28 +385,15 @@ export default function Home() {
                  <div className="absolute -bottom-4 -left-2 bg-background p-3 border border-foreground/10 backdrop-blur-xl z-20">
                     <p className="font-serif italic text-base">Масла Грасса.</p>
                  </div>
-               </motion.div>
+               </div>
             </div>
 
             {/* Point 03 */}
             <div className="relative z-10 flex flex-col h-full">
-               {/* Fixed Giant Number Background */}
-               <motion.div 
-                 initial={{ opacity: 0 }}
-                 whileInView={{ opacity: 1 }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1 }}
-                 className="absolute -top-12 -left-6 lg:-top-16 lg:-left-6 text-[40vw] lg:text-[10rem] xl:text-[14rem] font-serif italic text-foreground/5 pointer-events-none select-none z-0 tracking-tighter leading-none"
-               >
+               <div className="absolute -top-12 -left-6 lg:-top-16 lg:-left-6 text-[40vw] lg:text-[10rem] xl:text-[14rem] font-serif italic text-foreground/5 pointer-events-none select-none z-0 tracking-tighter leading-none">
                  03
-               </motion.div>
-               <motion.div
-                 initial={{ height: 0 }}
-                 whileInView={{ height: "100%" }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
-                 className="absolute left-0 top-0 w-px bg-primary/30 z-10"
-               />
+               </div>
+               <div className="absolute left-0 top-0 w-px bg-primary/30 z-10 h-full" />
                <div className="pl-6 xl:pl-8 py-8 relative z-20 grow">
                  <h3 className="text-2xl lg:text-3xl font-serif leading-[1.2] mb-4">
                    Искусство тишины. <br className="hidden xl:block"/>
@@ -499,13 +404,7 @@ export default function Home() {
                  </p>
                </div>
 
-               <motion.div 
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true, margin: "-10%" }}
-                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-                 className="relative group mt-auto pl-6 xl:pl-8"
-               >
+               <div className="relative group mt-auto pl-6 xl:pl-8">
                  <div className="aspect-4/3 overflow-hidden relative w-full">
                    <img 
                      src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?q=80&w=800&auto=format&fit=crop" 
@@ -517,7 +416,7 @@ export default function Home() {
                  <div className="absolute -bottom-4 -left-2 bg-background p-3 border border-foreground/10 backdrop-blur-xl z-20">
                     <p className="font-serif italic text-base">40+ часов.</p>
                  </div>
-               </motion.div>
+               </div>
             </div>
           </div>
 
@@ -555,15 +454,15 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-20 w-full">
            <AnimatePresence mode="wait">
              {quizStep < QUIZ_QUESTIONS.length ? (
-               <motion.div
-                 key={`quiz-step-${quizStep}`}
-                 initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                 exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
-                 transition={{ duration: 0.8, ease: "easeOut" }}
-                 className="flex flex-col items-center"
-               >
-                 <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-8 md:mb-12">
+                <motion.div
+                  key={`quiz-step-${quizStep}`}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex flex-col items-center"
+                >
+                 <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-8 md:mb-12">
                    Шаг 0{quizStep + 1}
                  </p>
                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif italic mb-12 md:mb-16 text-foreground/90">
@@ -572,34 +471,32 @@ export default function Home() {
                  
                  <div className="flex flex-wrap justify-center gap-4 md:gap-6 w-full max-w-2xl">
                    {QUIZ_QUESTIONS[quizStep].options.map((option, idx) => (
-                      <motion.button 
+                      <button 
                         key={option.value}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 + (idx * 0.1), duration: 0.5 }}
                         onClick={() => handleQuizAnswer(option.value)}
                         className="border border-foreground/10 bg-foreground/10 text-foreground/50 hover:bg-accent hover:text-white hover:border-accent transition-all duration-500 px-8 md:px-12 py-4 md:py-5 rounded-full text-xs font-light tracking-widest uppercase backdrop-blur-md w-full sm:w-auto"
                       >
                         {option.label}
-                      </motion.button>
+                      </button>
                    ))}
                  </div>
                  
                  {/* Progress indicator */}
                  <div className="flex gap-2 mt-24">
                    {QUIZ_QUESTIONS.map((_, i) => (
-                     <div key={i} className={`h-[1px] w-8 md:w-16 transition-all duration-500 ${i === quizStep ? 'bg-primary' : i < quizStep ? 'bg-foreground/30' : 'bg-foreground/10'}`}></div>
+                     <div key={i} className={`h-px w-8 md:w-16 transition-all duration-500 ${i === quizStep ? 'bg-accent' : i < quizStep ? 'bg-foreground/30' : 'bg-foreground/10'}`}></div>
                    ))}
                  </div>
-               </motion.div>
+                </motion.div>
              ) : quizResult && (
-               <motion.div
-                 key="quiz-result"
-                 initial={{ opacity: 0, scale: 0.95, filter: "blur(20px)" }}
-                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                 transition={{ duration: 1.2, ease: "easeOut" }}
-                 className="flex flex-col items-center"
-               >
+                <motion.div
+                  key="quiz-result"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex flex-col items-center"
+                >
                  <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-8">
                    Ваша интуиция выбрала
                  </p>
@@ -623,7 +520,7 @@ export default function Home() {
                      Пройти снова
                    </button>
                  </div>
-               </motion.div>
+                </motion.div>
              )}
            </AnimatePresence>
         </div>
@@ -676,7 +573,7 @@ export default function Home() {
                       key={i} 
                       onClick={() => setReviewIndex(i * 3)}
                       className={`h-1 transition-all duration-500 rounded-full ${Math.floor(reviewIndex / 3) === i ? 'w-12 bg-background' : 'w-2 bg-background/20'}`}
-                    />
+                    ></button>
                   ))}
                 </div>
 
@@ -748,7 +645,7 @@ export default function Home() {
                       <h3 className={`text-xl lg:text-3xl font-serif transition-colors duration-500 pr-8 ${isOpen ? "text-foreground" : "text-foreground/70 group-hover:text-foreground"}`}>
                         {faq.question}
                       </h3>
-                      <div className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${isOpen ? "bg-primary text-white border-primary" : "border-primary/30 text-primary/50 group-hover:border-primary group-hover:text-primary"}`}>
+                      <div className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-500 ${isOpen ? "bg-primary text-white border-primary" : "border-primary/30 text-primary/50 group-hover:border-primary group-hover:text-primary"}`}>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-500 ${isOpen ? "rotate-180" : "rotate-0"}`} />
                       </div>
                     </button>
@@ -799,7 +696,7 @@ export default function Home() {
           </span>
           
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-serif text-foreground mb-12 max-w-4xl leading-tight">
-            Найдите <i className="text-foreground/50">свой</i> манифест тишины в нашей коллекции
+            Найдите <span className="italic text-foreground/50">свой</span> манифест тишины в нашей коллекции
           </h2>
           
           <a 
@@ -827,14 +724,10 @@ export default function Home() {
         </div>
 
         <div className="px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8">
-          {JOURNAL.map((post, i) => (
-            <motion.a 
+           {JOURNAL.map((post, i) => (
+            <a 
               href="#"
               key={post.id} 
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
               className="group flex flex-col gap-6 cursor-pointer"
             >
               <div className="aspect-square overflow-hidden bg-foreground/5 relative border border-foreground/5">
@@ -858,7 +751,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl md:text-2xl font-serif text-foreground/90 group-hover:text-foreground transition-colors line-clamp-2">{post.title}</h3>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
         
@@ -977,7 +870,7 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               onClick={() => setIsFaqDrawerOpen(false)}
               className="fixed inset-0 z-60 bg-black/40 backdrop-blur-sm"
-            />
+            ></motion.div>
             {/* Slide-out Panel */}
             <motion.div
               initial={{ x: "100%" }}
@@ -1045,5 +938,3 @@ export default function Home() {
     </main>
   );
 }
-
-

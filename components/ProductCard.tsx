@@ -7,13 +7,7 @@ import { CopyPlus } from "lucide-react";
 export function ProductCard({ scent, index }: { scent: any, index: number }) {
   return (
     <Link href={`/product/${scent.id}`} className="block">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 0.6, delay: index * 0.05 }}
-        className="group relative flex flex-col gap-4 cursor-pointer"
-      >
+      <div className="group relative flex flex-col gap-4 cursor-pointer">
         <div className="aspect-square w-full overflow-hidden relative bg-secondary">
           <img 
             src={scent.img} 
@@ -28,7 +22,7 @@ export function ProductCard({ scent, index }: { scent: any, index: number }) {
           </div>
           <div className="absolute top-3 left-3 md:top-4 md:left-4 z-20 flex gap-2">
              <span className="bg-background/80 backdrop-blur-md border border-foreground/10 px-2 py-1 text-[8px] md:text-[10px] uppercase tracking-widest text-foreground/90">
-               Свеча
+                Свеча
              </span>
              {scent.badge && (
                <span className="bg-primary/80 backdrop-blur-md border border-primary/50 px-2 py-1 text-[8px] md:text-[10px] uppercase tracking-widest text-primary-foreground">
@@ -45,11 +39,11 @@ export function ProductCard({ scent, index }: { scent: any, index: number }) {
           </div>
           
           <div className="flex flex-col gap-1 border-t border-foreground/10 pt-2 mt-1">
-            <p className="text-foreground/60 text-[10px] md:text-xs tracking-widest uppercase line-clamp-1">{scent.slogan}</p>
+            <p className="text-accent text-[10px] md:text-xs tracking-widest uppercase line-clamp-1">{scent.slogan}</p>
             <span className="text-primary text-[9px] md:text-[10px] uppercase tracking-[0.2em] line-clamp-1">{scent.notes}</span>
           </div>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }
