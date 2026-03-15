@@ -32,48 +32,50 @@
 }
 
 :root {
-  --background: #F9F8F6;
-  --foreground: #2C2B29;
+  --background: #FFFFFF;
+  --foreground: #111111;
   --card: #F9F8F6;
-  --card-foreground: #2C2B29;
-  --popover: #F9F8F6;
-  --popover-foreground: #2C2B29;
-  --primary: #AA6B57;
+  --card-foreground: #111111;
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
+  --primary: #39AAE1; /* New Blue */
   --primary-foreground: #FFFFFF;
-  --secondary: #EBE9E4;
-  --secondary-foreground: #2C2B29;
-  --muted: #EBE9E4;
-  --muted-foreground: #8A9A87;
-  --accent: #8A9A87;
-  --accent-foreground: #2C2B29;
-  --destructive: #4A6741;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #111111;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #3AAB40; /* New Green */
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #EBE9E4;
-  --input: #EBE9E4;
-  --ring: #AA6B57;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #39AAE1;
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: #2C2B29;
-  --foreground: #F9F8F6;
-  --card: #2C2B29;
-  --card-foreground: #F9F8F6;
-  --popover: #2C2B29;
-  --popover-foreground: #F9F8F6;
-  --primary: #AA6B57;
+  /* Enforce Light Theme mostly, or provide a high-contrast dark option if ever needed. 
+     For V4 transition, we map dark to light to override any system dark settings for now. */
+  --background: #FFFFFF;
+  --foreground: #111111;
+  --card: #F9F8F6;
+  --card-foreground: #111111;
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
+  --primary: #39AAE1;
   --primary-foreground: #FFFFFF;
-  --secondary: #4A6741;
-  --secondary-foreground: #F9F8F6;
-  --muted: #4A6741;
-  --muted-foreground: #EBE9E4;
-  --accent: #8A9A87;
-  --accent-foreground: #F9F8F6;
-  --destructive: #AA6B57;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #111111;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #3AAB40;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #4A6741;
-  --input: #4A6741;
-  --ring: #AA6B57;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #39AAE1;
 }
 
 @layer base {
